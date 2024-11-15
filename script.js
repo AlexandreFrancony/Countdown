@@ -73,19 +73,38 @@ function updateCountdown() {
     }
 }
 
-// Fonction pour ajouter une nouvelle tâche
+// Fonction pour ajouter une nouvelle tâche avec une icône de suppression
 function addTask() {
     const taskText = newTaskInput.value.trim();
     if (taskText) {
         const taskItem = document.createElement('li');
-        taskItem.textContent = taskText;
-        taskItem.addEventListener('click', () => {
+        
+        // Conteneur pour le texte de la tâche
+        const taskContent = document.createElement('span');
+        taskContent.textContent = taskText;
+        taskContent.classList.add('task-text');
+        taskContent.addEventListener('click', () => {
             taskItem.classList.toggle('completed');
         });
+
+        // Icône de suppression en utilisant l'emoji poubelle
+        const deleteIcon = document.createElement('span');
+        deleteIcon.textContent = '🗑️'; // Emoji poubelle
+        deleteIcon.classList.add('delete-icon');
+        deleteIcon.addEventListener('click', () => {
+            tasks.removeChild(taskItem);
+        });
+
+        // Ajout des éléments dans la tâche
+        taskItem.appendChild(taskContent);
+        taskItem.appendChild(deleteIcon);
         tasks.appendChild(taskItem);
+
+        // Réinitialisation de l'input
         newTaskInput.value = '';
     }
 }
+
 
 // Gestion du sélecteur de thème
 themeSelector.addEventListener('change', (event) => {
