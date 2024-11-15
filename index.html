@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Décompte</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="default">
+    <header>
+        <div class="current">
+            <label for="current-time">Heure actuelle :</label>
+            <div id="current-time"></div>
+        </div>
+        <div>
+            <label for="start-time">Heure de début :</label>
+            <input type="time" id="start-time" placeholder="HH:MM">
+        </div>
+        <div>
+            <label for="end-time">Heure de fin :</label>
+            <input type="time" id="end-time" placeholder="HH:MM">
+        </div>
+        <div>
+            <label for="theme-selector">Choisissez un thème :</label>
+            <select id="theme-selector">
+                <option value="default">Par défaut</option>
+                <option value="dark">Sombre</option>
+                <option value="neon">Néon</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <div id="countdown">00:00:00</div>
+        <div id="progress-container">
+            <div id="progress-label">0%</div>
+            <progress id="progress-bar" max="100" value="0" class="default"></progress>
+        </div>
+        <div id="task-list">
+            <h3>Objectifs :</h3>
+            <ul id="tasks"></ul>
+            <div id="task-input-container">
+                <input type="text" id="new-task" placeholder="Ajouter un objectif">
+                <button id="add-task">Ajouter</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

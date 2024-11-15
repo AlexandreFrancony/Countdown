@@ -1,0 +1,217 @@
+/* Corps général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header label {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.current {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Pour espacer le texte de l'heure actuelle */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 15rem;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+#progress-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+#progress-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+}
+
+progress {
+    flex-grow: 1;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    appearance: none;
+    transition: background-color 0.3s;
+}
+
+/* Style pour le sélecteur de thème */
+.theme-selector-container {
+    display: flex;
+    align-items: center;
+}
+
+#theme-selector {
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-selector:hover {
+    background-color: #555;
+}
+
+/* Thème par défaut */
+body.default {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+progress.default::-webkit-progress-bar {
+    background-color: #cfcfcf;
+}
+
+progress.default::-webkit-progress-value {
+    background-color: #4caf50;
+}
+
+/* Thème sombre */
+body.dark {
+    background-color: #222;
+    color: #fff;
+}
+
+progress.dark::-webkit-progress-bar {
+    background-color: #444;
+}
+
+progress.dark::-webkit-progress-value {
+    background-color: #f39c12;
+}
+
+/* Thème néon */
+body.neon {
+    background-color: #000;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+progress.neon::-webkit-progress-bar {
+    background-color: #333;
+}
+
+progress.neon::-webkit-progress-value {
+    background-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+#task-list {
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#task-list h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#tasks {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#tasks li {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#tasks li.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #e0e0e0;
+    cursor: default;
+}
+
+/* Conteneur pour aligner l'input et le bouton sur la même ligne */
+#task-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#new-task {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#add-task {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+#add-task:hover {
+    background-color: #45a049;
+}
